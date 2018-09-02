@@ -1,0 +1,284 @@
+:root {
+    --cwhite: #F8F8F8;
+    --large: 1.2em;
+    --medium: 0.8em;
+    --small: 0.6em;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    height: 100%;
+}
+
+.btn {
+    border: none;
+    color: white;
+    font-size: 0.8em;
+    font-weight: 500;
+    padding: 0.5em;
+}
+
+
+/* SPINNER*/
+
+#spinner {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.loader {
+    
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    border-right: 16px solid green;
+    border-bottom: 16px solid red;
+    border-left: 16px solid pink;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*END OF SPINNER */
+
+/*pageHome --- START*/
+
+#page-home {
+    display: none;/*flex;*/
+    flex-direction: column;
+    height: 100%;
+}
+
+#home-header {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+}
+
+.btn__school {
+    background: black;
+    flex-grow: 1;
+   
+}
+
+.btn__grade {
+    background: black;
+    flex-grow: 0;
+}
+
+.btn__subject {
+    background: black;
+    flex-grow: 0;
+}
+
+.btn__change {
+    
+    background-color: gray;
+    flex-grow: 0;
+    border: 1px solid black;
+}
+
+#home-content {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+/*CARD*/
+
+.card__container {
+    margin: 10px;
+    border-radius: 2px;
+    background: var(--cwhite);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.card__header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid gray;
+}
+
+.card__header-l {
+    font-size: var(--large);
+}
+
+.card__header-m {
+    font-size: 0.8em;
+}
+
+.avatar {
+    padding: 5px;
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.card__title {
+    text-align: center;
+    margin: 1em;
+}
+
+.card__footer {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn__reply {
+    color: black;
+    flex-grow: 1;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-reply {
+    width: 20px;
+    height: 20px;
+    background-image: url("./assets/reply.svg");
+    background-repeat: no-repeat;
+}
+
+.btn__comments {
+    color: black;
+    flex-grow: 1;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-comments {
+    width: 20px;
+    height: 20px;
+    background-image: url("./assets/comments.svg");
+    background-repeat: no-repeat;
+}
+
+#home-footer {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    height: 3em;
+}
+
+.btn__home {
+    background: darkblue;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn__askquestion {
+    background: darkgreen;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn__theory {
+    background: purple;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn__menu {
+    background: rgb(255, 102, 0);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-home {
+    width: 20px;
+    height: 20px;
+    background-image: url("./assets/home.svg");
+    background-repeat: no-repeat;
+}
+
+.icon-theory {
+    width: 20px;
+    height: 20px;
+    background-image: url("./assets/theory.svg");
+    background-repeat: no-repeat;
+}
+
+.icon-askquestion {
+    width: 20px;
+    height: 20px;
+    background-image: url("./assets/askquestion.svg");
+    background-repeat: no-repeat;
+}
+
+.icon-menu {
+    width: 20px;
+    height: 20px;
+    background-image: url("./assets/menu.svg");
+    background-repeat: no-repeat;
+}
+
+/*pageHome --- END*/
+
+/*MODAL COMMENTS------START*/
+#modal-comments{
+    display:none;
+}
+/*MODAL COMMENTS------END*/
+
+/*PAGE LOGIN --------START*/
+#page-login{
+    display: none;
+}
+.btn__login {
+    background-color:rgb(127, 206, 9);
+    display:block;
+    width:100%;
+    font-size: 2em;
+}
+
+.btn__register {
+    background-color: #AA00FF;
+    display:block;
+    Width:100%;
+    font-size: 2em;
+}
+/*PAGE LOGIN --------END*/
+
+/*MODAL LOGIN ---------START*/
+#modal-login{
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top:0px;
+    left: 0px;
+    height:100px;
+}
+/*MODAL LOGIN ---------END*/
