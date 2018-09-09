@@ -31,16 +31,19 @@
 <script type="module" src="main.js" defer ></script>
 
 <body>
+   
     <div id="spinner">
         <div class="loader"></div>
     </div>
+    
      <div id="page-login">
         <button id="btn-login" class="btn btn__login">Login</button>
         <button id="btn-register" class="btn btn__register">Register</button>
         <div id="modal-login">
-            <button class="btn__login-close">X Close</button>
+            <button id="modal-login-btn-close" class="btn btn__login-close">X Close</button>
             <p>User Name</p><input id="i-username">
             <p>Password</p><input id="i-password">
+            <button id="modal-login-btn-login" class="btn btn__login-login">Login</button>
         </div>
         <div id="modal-register"></div>
     </div>

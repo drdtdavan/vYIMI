@@ -7,8 +7,8 @@ import {
 import { homeOptO } from './objects.js';
 
 const ELHomeHeader = document.getElementById('home-header');
-const ELHomeBody = document.getElementById('home-body');
-const ELComments = document.getElementById('comments');
+const ELHomeContent = document.getElementById('home-content');
+const ELComments = document.getElementById('modal-comments');
 const ELPageHome=document.getElementById('page-home');
 const ELPageLogin=document.getElementById('page-login');
 
@@ -42,7 +42,7 @@ function createCard(data) {
   return card;
 }
 
-function showHomeLoading() {
+export function showLoading() {
   document.getElementById("spinner").style.display = "flex";
 }
 
@@ -57,36 +57,37 @@ export function updateHomeHeader(){
 
 }
 export async function createHomePage() {
+  showLoading();
   ELPageHome.style.display="flex";
-  showHomeLoading();
+  
   ELComments.style.display = "none";
-  ELHomeBody.style.display = "";
+  ELHomeContent.style.display = "";
   var querySnapshot = await FBDB.getDBHome();
   hideHomeLoading();
-  ELHomeBody.innerHTML = "";
+  ELHomeContent.innerHTML = "";
  
   querySnapshot.forEach(doc => {
     var data = doc.data()
     var card = createCard(data);
     card.getElementsByClassName('comments')[0].addEventListener('click', () => onclickComments(data.subject, data.grade, data.topicid));
     console.log(card.getElementsByClassName('comments'));
-    ELHomeBody.appendChild(card);
-    ELHomeBody.appendChild(document.createElement('br'));
+    ELHomeContent.appendChild(card);
+    ELHomeContent.appendChild(document.createElement('br'));
   });
-  parse(ELHomeBody.getElementsByClassName("pmath"));
+  parse(ELHomeContent.getElementsByClassName("pmath"));
 }
 
 function exitComments(scrollTop) {
   ELComments.style.display = "none";
-  ELHomeBody.style.display = "";
+  ELHomeContent.style.display = "";
   document.getElementsByTagName('main')[0].scrollTop = scrollTop;
 
 }
 export async function createCommentsPage(subject, grade, topicid) {
   var scrollTop = document.getElementsByTagName('main')[0].scrollTop;
-  showHomeLoading();
+  showLoading();
   ELComments.style.display = "";
-  ELHomeBody.style.display = "none";
+  ELHomeContent.style.display = "none";
   var querySnapshot = await FBDB.getDBComments(subject, grade, topicid);
   hideHomeLoading();
   var commentHeader = document.createElement('div');
