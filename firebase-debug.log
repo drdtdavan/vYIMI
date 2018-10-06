@@ -1,0 +1,76 @@
+[debug] [2018-09-18T16:03:35.229Z] ----------------------------------------------------------------------
+[debug] [2018-09-18T16:03:35.231Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dtdav\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-18T16:03:35.231Z] CLI Version:   4.2.1
+[debug] [2018-09-18T16:03:35.231Z] Platform:      win32
+[debug] [2018-09-18T16:03:35.231Z] Node Version:  v8.11.2
+[debug] [2018-09-18T16:03:35.231Z] Time:          Tue Sep 18 2018 18:03:35 GMT+0200 (South Africa Standard Time)
+[debug] [2018-09-18T16:03:35.231Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-18T16:03:35.241Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-18T16:03:35.241Z] > authorizing via signed-in user
+[debug] [2018-09-18T16:03:35.242Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-09-18T16:03:35.242Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-09-18T16:03:36.039Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-18T16:03:36.049Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/yimi-vanilla  
+ 
+[debug] [2018-09-18T16:03:37.526Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-18T16:03:37.531Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/yimi-vanilla  
+ 
+[debug] [2018-09-18T16:03:39.800Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\dtdav\Dropbox\PROGRAMMING\PROJECTS\vYIMI'...
+[info] 
+[debug] [2018-09-18T16:03:39.810Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/191754954339/clients/_:getWebAppConfig  
+ 
+[debug] [2018-09-18T16:03:40.827Z] <<< HTTP RESPONSE 200
+[info] i  hosting[yimi-vanilla]: Serving hosting files from: public
+[info] +  hosting[yimi-vanilla]: Local server: http://localhost:5000
+[debug] [2018-09-18T16:06:53.250Z] ----------------------------------------------------------------------
+[debug] [2018-09-18T16:06:53.252Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dtdav\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-18T16:06:53.253Z] CLI Version:   4.2.1
+[debug] [2018-09-18T16:06:53.253Z] Platform:      win32
+[debug] [2018-09-18T16:06:53.253Z] Node Version:  v8.11.2
+[debug] [2018-09-18T16:06:53.253Z] Time:          Tue Sep 18 2018 18:06:53 GMT+0200 (South Africa Standard Time)
+[debug] [2018-09-18T16:06:53.253Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-18T16:06:53.263Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-18T16:06:53.264Z] > authorizing via signed-in user
+[debug] [2018-09-18T16:06:53.265Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/yimi-vanilla  
+ 
+[debug] [2018-09-18T16:06:54.784Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-18T16:06:54.789Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/yimi-vanilla  
+ 
+[debug] [2018-09-18T16:06:55.679Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\dtdav\Dropbox\PROGRAMMING\PROJECTS\vYIMI'...
+[info] 
+[debug] [2018-09-18T16:06:55.687Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/191754954339/clients/_:getWebAppConfig  
+ 
+[debug] [2018-09-18T16:06:56.621Z] <<< HTTP RESPONSE 200
+[info] i  hosting[yimi-vanilla]: Serving hosting files from: public
+[info] +  hosting[yimi-vanilla]: Local server: http://localhost:5000
+[debug] [2018-09-18T16:09:35.246Z] ----------------------------------------------------------------------
+[debug] [2018-09-18T16:09:35.248Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dtdav\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-18T16:09:35.248Z] CLI Version:   4.2.1
+[debug] [2018-09-18T16:09:35.248Z] Platform:      win32
+[debug] [2018-09-18T16:09:35.248Z] Node Version:  v8.11.2
+[debug] [2018-09-18T16:09:35.248Z] Time:          Tue Sep 18 2018 18:09:35 GMT+0200 (South Africa Standard Time)
+[debug] [2018-09-18T16:09:35.248Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-18T16:09:35.258Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-18T16:09:35.259Z] > authorizing via signed-in user
+[debug] [2018-09-18T16:09:35.261Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/yimi-vanilla  
+ 
+[debug] [2018-09-18T16:09:36.744Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-18T16:09:36.749Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/yimi-vanilla  
+ 
+[debug] [2018-09-18T16:09:38.972Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\dtdav\Dropbox\PROGRAMMING\PROJECTS\vYIMI'...
+[info] 
+[debug] [2018-09-18T16:09:38.981Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/191754954339/clients/_:getWebAppConfig  
+ 
+[debug] [2018-09-18T16:09:39.900Z] <<< HTTP RESPONSE 200
+[info] i  hosting[yimi-vanilla]: Serving hosting files from: public
+[info] +  hosting[yimi-vanilla]: Local server: http://localhost:5000

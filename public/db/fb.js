@@ -9,7 +9,8 @@ import {
 } from '../components.js'
 export class FBDB {
 
-    static InitDB() {
+   static InitDB() {
+        
         this.config = {
             apiKey: "AIzaSyBju6njNYfjon_6jv7z8XOAbVl25w2nYOs",
             authDomain: "yimi-vanilla.firebaseapp.com",
@@ -22,14 +23,14 @@ export class FBDB {
         firebase.firestore().enablePersistence().then(() => {
             this.db = firebase.firestore()
         })
-        firebase.auth().onAuthStateChanged((user) => {
-            if (!user) {
-                var provider = new firebase.auth.GoogleAuthProvider();
-                firebase.auth().signInWithRedirect(provider);
-            } else {
-
-                console.log('TCL: FBDB -> staticInitDB -> signed in already');
-            }
+        firebase.auth().onAuthStateChanged((user)=>
+        {if(!user){
+            var provider=new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithRedirect(provider);
+        }else{
+            
+           createHomePage();
+        }
 
         })
     }

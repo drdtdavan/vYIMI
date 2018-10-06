@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=UnifrakturMaguntia">
+<link rel="stylesheet" href="./mathscribe/jqmath-0.4.3.css">
+
+<script src="./mathscribe/jquery-1.4.3.min.js"></script>
+<script src="./mathscribe/jqmath-etc-0.4.6.min.js" charset="utf-8"></script>
+
+<script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+
+<!-- Add additional services you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-messaging.js"></script> -->
+<!-- <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-functions.js"></script> -->
+
+<!-- Comment out (or don't include) services you don't want to use -->
+<!-- <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-storage.js"></script> -->
+<link rel="stylesheet" href="main.css">
+<script type="module" src="main.js" defer ></script>
+
+<body>
+   
+    <div id="spinner">
+        <div class="loader"></div>
+    </div>
+    
+     <div id="page-login">
+        <button id="btn-login" class="btn btn__login">Login</button>
+        <button id="btn-register" class="btn btn__register">Register</button>
+        <div id="modal-login">
+            <button id="modal-login-btn-close" class="btn btn__login-close">X Close</button>
+            <p>User Name</p><input id="i-username">
+            <p>Password</p><input id="i-password">
+            <button id="modal-login-btn-login" class="btn btn__login-login">Login</button>
+        </div>
+        <div id="modal-register"></div>
+    </div>
+    
+    <div id="modal-comments">
+        <button id="modal-comments-btn-close"class="btn btn__close"> X Close</button>
+        <div class="modal-content"></div>
+        <div class="footer"></div>
+    </div>
+    <div id="modal-askquestion"></div>
+    <div id="page-home">
+        <div id="home-header">
+            <button id='hSchool' class="btn btn__school">Excelsior Primary School school</button>
+            <button id='hGrade' class="btn btn__grade">Grade 8</button>
+            <button id='hSubject' class="btn btn__subject">Physical Science</button>
+            <button id='hChange' class="btn btn__change">Change</button>
+        </div>
+        <div id="home-content">
+            <div class="card__container">
+                <div class='card__header'>
+                    <img class='avatar' src="./assets/askquestion.svg">
+                    <div>
+                        <p class='card__header-l'>Dr Davan</p>
+                        <p class='card__header-m'>Excelsior Primary School</p>
+                        <p class='card__header-m'>Grade 8</p>
+                    </div>
+                </div>
+                <p class="card__title">Factorising Fractions</p>
+                <div class="card__body">
+
+                    <p class="pmath">The quick brown fox jumps over the lazy dog</p>
+                </div>
+                <div class="card__footer">
+                    <button class="btn btn__reply">
+                        <span class="icon-reply"></span>
+                        Reply
+                    </button>
+                    <button class="btn btn__comments">
+                        <span class="icon-comments"></span>Comments
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="home-footer">
+            <button id="button-home" class="btn btn__home ">
+                <span class="icon-home"></span>Home</button>
+            <button class="btn btn__askquestion ">
+                <span class="icon-askquestion"></span>Ask Question</button>
+            <button class="btn btn__theory">
+                <span class="icon-theory"></span>Theory</button>
+            <button class="btn btn__menu ">
+                <span class="icon-menu"></span>Menu</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
