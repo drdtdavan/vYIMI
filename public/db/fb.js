@@ -27,10 +27,11 @@ export class FBDB {
         {if(!user){
             var provider=new firebase.auth.GoogleAuthProvider();
             firebase.auth().signInWithRedirect(provider);
-        }else{
+        }else if(newUser()){
             
-           createHomePage();
+           createUserPage();
         }
+        else{createHomePage()}
 
         })
     }
