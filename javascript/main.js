@@ -1,6 +1,6 @@
 import {
     FBDB
-} from '/db/fb.js';
+} from './db/fb.js';
 import {showLoading} from './components.js'
 FBDB.InitDB();
 
