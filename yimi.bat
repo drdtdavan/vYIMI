@@ -1,4 +1,5 @@
-rmdir public /s
+rmdir public /s /q
+
 mkdir public
 mkdir public\assets
 mkdir public\css
@@ -8,3 +9,4 @@ robocopy assets .\public\assets /e
 robocopy css .\public\css /e
 robocopy javascript .\public\javascript /e
 copy index.html .\public\index.html
+firebase serve

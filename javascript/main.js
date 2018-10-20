@@ -2,7 +2,7 @@ import {
     FBDB
 } from './db/fb.js';
 import {showLoading} from './components.js'
-FBDB.InitDB();
+window.onload=FBDB.InitDB;
 
 var ElMCommentsBtnClose = document.getElementById("modal-comments-btn-close");
 function InitWP() {

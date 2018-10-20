@@ -255,35 +255,10 @@ body {
 }
 /*MODAL COMMENTS------END*/
 
-/*PAGE LOGIN --------START*/
-#page-login{
+
+
+/*NEW USER-----------START*/
+#new-user{
     display: none;
 }
-.btn__login {
-    background-color:rgb(127, 206, 9);
-    display:block;
-    width:100%;
-    font-size: 2em;
-}
-
-.btn__register {
-    background-color: #AA00FF;
-    display:block;
-    Width:100%;
-    font-size: 2em;
-}
-/*PAGE LOGIN --------END*/
-
-/*MODAL LOGIN ---------START*/
-#modal-login{
-    background-color: white;
-    display: none;
-    z-index: 1;
-    position: absolute;
-    top:0px;
-    left: 0px;
-    height:100%;
-    width:100%;
-}
-.
-/*MODAL LOGIN ---------END*/
+/*NEW USER-----------END*/

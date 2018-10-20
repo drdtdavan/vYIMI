@@ -10,12 +10,9 @@ const ELHomeHeader = document.getElementById('home-header');
 const ELHomeContent = document.getElementById('home-content');
 const ELComments = document.getElementById('modal-comments');
 const ELPageHome=document.getElementById('page-home');
-const ELPageLogin=document.getElementById('page-login');
+const ELNewUser=document.getElementById('new-user');
 
-export function showLoginPage(){
-ELPageLogin.style.display='block';
-ELPageHome.style.display='none';
-}
+
 function createCard(data) {
   var card = document.createElement("div");
   card.className = 'card container';
@@ -114,4 +111,8 @@ function parse(nodelist) {
   for (let child of nodelist) {
     M.parseMath(child);
   }
+}
+export function showNewUser(){ 
+ELPageHome.style.display="none";
+ELNewUser.style.display="grid";
 }

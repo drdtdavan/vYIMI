@@ -4,8 +4,8 @@ import {
 } from '../objects.js'
 import {
     updateHomeHeader,
-    createHomePage,
-    showLoginPage
+    createHomePage,    
+    showNewUser
 } from '../components.js'
 export class FBDB {
 
@@ -26,9 +26,10 @@ export class FBDB {
             if (!user) {
                 var provider = new firebase.auth.GoogleAuthProvider();
                 firebase.auth().signInWithRedirect(provider);
+                
             } else {
-
-                console.log('TCL: FBDB -> staticInitDB -> signed in already');
+                showNewUser();
+               
             }
 
         })
