@@ -260,5 +260,6 @@ body {
 /*NEW USER-----------START*/
 #new-user{
     display: none;
+    margin:2em;
 }
 /*NEW USER-----------END*/
