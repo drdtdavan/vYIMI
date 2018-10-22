@@ -112,7 +112,7 @@ function parse(nodelist) {
     M.parseMath(child);
   }
 }
-export function showNewUser(){ 
+export function showNewUserPage(){ 
 ELPageHome.style.display="none";
-ELNewUser.style.display="grid";
+ELNewUser.style.display="flex";
 }

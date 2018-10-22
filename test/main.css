@@ -1,0 +1,13 @@
+#new-user{display: flex;flex-direction: column;}
+#new-user>input,select{
+    width:100%;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+}
+#btn-new-user{
+    margin-top: 2em;
+    font-size: 1.5em;
+    color: white;
+    background-color: darkslateblue;
+    border: none;
+}

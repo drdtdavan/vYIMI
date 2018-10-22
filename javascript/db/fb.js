@@ -4,11 +4,11 @@ import {
 } from '../objects.js'
 import {
     updateHomeHeader,
-    createHomePage,    
-    showNewUser
+    createHomePage,
+    showNewUserPage
 } from '../components.js'
 export class FBDB {
-
+    static uid = "";
     static InitDB() {
         this.config = {
             apiKey: "AIzaSyBju6njNYfjon_6jv7z8XOAbVl25w2nYOs",
@@ -22,14 +22,19 @@ export class FBDB {
         firebase.firestore().enablePersistence().then(() => {
             this.db = firebase.firestore()
         })
-        firebase.auth().onAuthStateChanged((user) => {
-            if (!user) {
+        firebase.auth().onAuthStateChanged((userA) => {
+            if (!userA) {
                 var provider = new firebase.auth.GoogleAuthProvider();
                 firebase.auth().signInWithRedirect(provider);
-                
+
             } else {
-                showNewUser();
-               
+                FBDB.uid = userA.user.uid;
+                if (isNewUser()) {
+                    showNewUserPage();
+                } else {
+                    createHomePage()
+                }
+
             }
 
         })
@@ -58,20 +63,22 @@ export class FBDB {
             updateHomeHeader();
         })
     }
-    static SignIn(email, password) {
-        firebase
-            .auth()
-            .signInWithEmailAndPassword(email, password)
-            .then((userC) => {
-                this.getUser(userC.user.uid);
-                createHomePage()
-            })
-            .catch(function (error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // ...
-                console.log(errorMessage);
-            });
-    }
+
+    static saveNewUser(firstname, surname, nickname, school, grade) {}
+    /*     static SignIn(email, password) {
+            firebase
+                .auth()
+                .signInWithEmailAndPassword(email, password)
+                .then((userC) => {
+                    this.getUser(userC.user.uid);
+                    createHomePage()
+                })
+                .catch(function (error) {
+                    // Handle Errors here.
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    // ...
+                    console.log(errorMessage);
+                });
+        } */
 }
