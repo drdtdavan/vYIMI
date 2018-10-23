@@ -1,7 +1,8 @@
 import {
     FBDB
 } from './db/fb.js';
-import {showLoading} from './components.js'
+import {showLoading} from './components.js';
+import {userO} from './objects.js';
 window.onload=FBDB.InitDB;
 
 var ElMCommentsBtnClose = document.getElementById("modal-comments-btn-close");
@@ -15,11 +16,11 @@ function closeCommentsModal() {
     document.getElementById('modal-comments').style.display = "none";
 }
 function saveNewUser(){
-    var firstname=document.getElementById('inp-firstname').value;
-    var surname=document.getElementById('inp-surname').value;
-    var nickname=document.getElementById('inp-nickname').value;
-    var school=document.getElementById('inp-school').value;
-    var grade=document.getElementById('sel-grade').value;
+    userO.firstname=document.getElementById('inp-firstname').value;
+    userO.surname=document.getElementById('inp-surname').value;
+    userO.nickname=document.getElementById('inp-nickname').value;
+    userO.school=document.getElementById('inp-school').value;
+    userO.grade=document.getElementById('sel-grade').value;
     
 }
 export function onclickComments() {}

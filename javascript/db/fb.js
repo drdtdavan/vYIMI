@@ -64,7 +64,12 @@ export class FBDB {
         })
     }
 
-    static saveNewUser(firstname, surname, nickname, school, grade) {}
+    static saveNewUser() {
+        this.db.collection('users')
+        .doc(userO.uid)
+        .set(userO)
+        .then(()=>createHomePage())
+    }
     /*     static SignIn(email, password) {
             firebase
                 .auth()
