@@ -8,7 +8,7 @@ import {
     showNewUserPage
 } from '../components.js'
 export class FBDB {
-    static uid = "";
+
     static InitDB() {
         this.config = {
             apiKey: "AIzaSyBju6njNYfjon_6jv7z8XOAbVl25w2nYOs",
@@ -20,7 +20,7 @@ export class FBDB {
         };
         firebase.initializeApp(this.config);
         firebase.firestore().enablePersistence().then(() => {
-            this.db = firebase.firestore()
+           
         })
         firebase.auth().onAuthStateChanged((userA) => {
             if (!userA) {
@@ -28,8 +28,10 @@ export class FBDB {
                 firebase.auth().signInWithRedirect(provider);
 
             } else {
-                FBDB.uid = userA.user.uid;
-                if (isNewUser()) {
+                console.log(userA);
+                userO.uid = userA.uid;
+
+                if (FBDB.isNewUser()) {
                     showNewUserPage();
                 } else {
                     createHomePage()
@@ -41,21 +43,30 @@ export class FBDB {
     }
 
 
-
+    static isNewUser() {
+        firebase.firestore().collection('users')
+            .doc(userO.uid)
+            .get()
+            .then((UO) => {
+                if (UO) {
+                    return false;
+                } else return true;
+            });
+    }
     static getDBHome() {
-        return this.db.collection("topics-Maths")
+        return firebase.firestore().collection("topics-Maths")
             .get()
 
     }
     static getDBComments(subject, grade, topicid) {
-        return this.db.collection(`topics-${subject}-${grade}/${topicid}/comments`)
+        return firebase.firestore().collection(`topics-${subject}-${grade}/${topicid}/comments`)
             .get()
 
     }
 
     static getUser(uid) {
         console.log(userO);
-        this.db.collection('users').doc(uid).get().then((UO) => {
+        firebase.firestore().collection('users').doc(uid).get().then((UO) => {
             Object.assign(userO, UO.data());
             homeOptO.grade = userO.grade;
             homeOptO.school = userO.school;
@@ -65,10 +76,10 @@ export class FBDB {
     }
 
     static saveNewUser() {
-        this.db.collection('users')
-        .doc(userO.uid)
-        .set(userO)
-        .then(()=>createHomePage())
+        firebase.firestore().collection('users')
+            .doc(userO.uid)
+            .set(userO)
+            .then(() => createHomePage())
     }
     /*     static SignIn(email, password) {
             firebase
