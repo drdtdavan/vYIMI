@@ -56,7 +56,7 @@ export function updateHomeHeader(){
 export async function createHomePage() {
   showLoading();
   ELPageHome.style.display="flex";
-  
+  ELNewUser.style.display="none"
   ELComments.style.display = "none";
   ELHomeContent.style.display = "";
   var querySnapshot = await FBDB.getDBHome();

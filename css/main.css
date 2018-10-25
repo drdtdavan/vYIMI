@@ -262,7 +262,7 @@ body {
 
 /*NEW USER-----------START*/
 #new-user {
-    display: flex;
+    display: none;/*flex*/
     flex-direction: column;
 }
 

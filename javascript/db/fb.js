@@ -31,10 +31,10 @@ export class FBDB {
                 console.log(userA);
                 userO.uid = userA.uid;
 
-                if (FBDB.isNewUser()) {
-                    showNewUserPage();
+                if (FBDB.isOldUser()) {
+                   console.log("this is a old user"); //createHomePage();
                 } else {
-                    createHomePage()
+                    showNewUserPage();
                 }
 
             }
@@ -43,14 +43,12 @@ export class FBDB {
     }
 
 
-    static isNewUser() {
+    static isOldUser() {
         firebase.firestore().collection('users')
             .doc(userO.uid)
             .get()
             .then((UO) => {
-                if (UO) {
-                    return false;
-                } else return true;
+                return UO.exists;
             });
     }
     static getDBHome() {
