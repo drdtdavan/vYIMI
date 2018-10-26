@@ -21,7 +21,8 @@ function saveNewUser(){
     userO.nickname=document.getElementById('inp-nickname').value;
     userO.school=document.getElementById('inp-school').value;
     userO.grade=document.getElementById('sel-grade').value;
-    FBDB.saveNewUser();
+    if(validateNewUserForm()){
+    FBDB.saveNewUser();}
     
 }
 export function onclickComments() {}
