@@ -1,30 +1,42 @@
 import {
     FBDB
 } from './db/fb.js';
-import {showLoading} from './components.js';
-import {userO} from './objects.js';
-window.onload=FBDB.InitDB;
+import {
+    showLoading
+} from './components.js';
+import {
+    userO
+} from './objects.js';
+window.onload = FBDB.InitDB();
 
 var ElMCommentsBtnClose = document.getElementById("modal-comments-btn-close");
 var ElBtnNewUser = document.getElementById("btn-new-user");
+
 function InitWP() {
-    ElMCommentsBtnClose.addEventListener('click', () => closeCommentsModal());    
-    ElBtnNewUser.addEventListener('click', () => saveNewUser());    
+    ElMCommentsBtnClose.addEventListener('click', () => closeCommentsModal());
+    ElBtnNewUser.addEventListener('click', () => saveNewUser());
 }
 
 function closeCommentsModal() {
     document.getElementById('modal-comments').style.display = "none";
 }
-function saveNewUser(){
-    userO.firstname=document.getElementById('inp-firstname').value;
-    userO.surname=document.getElementById('inp-surname').value;
-    userO.nickname=document.getElementById('inp-nickname').value;
-    userO.school=document.getElementById('inp-school').value;
-    userO.grade=document.getElementById('sel-grade').value;
-    if(validateNewUserForm()){
-    FBDB.saveNewUser();}
-    
+
+function saveNewUser() {
+    var firstname = document.getElementById('inp-firstname').value;
+    var surname = document.getElementById('inp-surname').value;
+    var nickname = document.getElementById('inp-nickname').value;
+    var school = document.getElementById('inp-school').value;
+    var grade = document.getElementById('sel-grade').value;
+    if (firstname && surname && nickname && school && grade) {
+        userO.firstname = firstname;
+        userO.surname = surname;
+        userO.nickname = nickname;
+        userO.school = school;
+        userO.grade = grade;
+        FBDB.saveNewUser();
+    } else showErrorModal("Fill in the empty fields")
 }
+function showErrorModal(msg){}
 export function onclickComments() {}
 
 InitWP();
