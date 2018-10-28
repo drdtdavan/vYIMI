@@ -36,7 +36,12 @@ function saveNewUser() {
         FBDB.saveNewUser();
     } else showErrorModal("Fill in the empty fields")
 }
-function showErrorModal(msg){}
+function showErrorModal(msg){
+    var x = document.getElementById("snackbar");
+    x.innerText=msg;
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
 export function onclickComments() {}
 
 InitWP();
