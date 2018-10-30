@@ -2,19 +2,23 @@ import {
     FBDB
 } from './db/fb.js';
 import {
-    showLoading
+    showLoading,hideLoading
 } from './components.js';
 import {
     userO
 } from './objects.js';
-window.onload = FBDB.InitDB();
+
+
 
 var ElMCommentsBtnClose = document.getElementById("modal-comments-btn-close");
 var ElBtnNewUser = document.getElementById("btn-new-user");
 
-function InitWP() {
+async function InitWebPage() {
     ElMCommentsBtnClose.addEventListener('click', () => closeCommentsModal());
     ElBtnNewUser.addEventListener('click', () => saveNewUser());
+    showLoading();
+    await FBDB.InitDB();
+    hideLoading();
 }
 
 function closeCommentsModal() {
@@ -43,5 +47,4 @@ function showErrorModal(msg){
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
 export function onclickComments() {}
-
-InitWP();
+window.onload = InitWebPage();

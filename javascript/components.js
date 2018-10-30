@@ -43,7 +43,7 @@ export function showLoading() {
   document.getElementById("spinner").style.display = "flex";
 }
 
-function hideHomeLoading() {
+export function hideLoading() {
   document.getElementById("spinner").style.display = "none";
 }
 
@@ -60,7 +60,7 @@ export async function createHomePage() {
   ELComments.style.display = "none";
   ELHomeContent.style.display = "";
   var querySnapshot = await FBDB.getDBHome();
-  hideHomeLoading();
+  hideLoading();
   ELHomeContent.innerHTML = "";
  
   querySnapshot.forEach(doc => {
@@ -86,7 +86,7 @@ export async function createCommentsPage(subject, grade, topicid) {
   ELComments.style.display = "";
   ELHomeContent.style.display = "none";
   var querySnapshot = await FBDB.getDBComments(subject, grade, topicid);
-  hideHomeLoading();
+  hideLoading();
   var commentHeader = document.createElement('div');
   commentHeader.style.display = "flex";
   var commentBackButton = document.createElement('button');

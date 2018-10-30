@@ -5,7 +5,9 @@ import {
 import {
     updateHomeHeader,
     createHomePage,
-    showNewUserPage
+    showNewUserPage,
+    hideLoading,
+    showLoading
 } from '../components.js'
 export class FBDB {
 
@@ -25,7 +27,8 @@ export class FBDB {
         firebase.auth().onAuthStateChanged((userA) => {
             if (!userA) {
                 var provider = new firebase.auth.GoogleAuthProvider();
-                firebase.auth().signInWithRedirect(provider);
+                showLoading();
+                firebase.auth().signInWithRedirect(provider).then(()=>hideLoading());
 
             } else {
                 console.log(userA);
