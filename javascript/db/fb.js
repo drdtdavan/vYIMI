@@ -28,18 +28,12 @@ export class FBDB {
             if (!userA) {
                 var provider = new firebase.auth.GoogleAuthProvider();
                 showLoading();
-                firebase.auth().signInWithRedirect(provider).then(()=>hideLoading());
+                firebase.auth().signInWithRedirect(provider);
 
             } else {
                 console.log(userA);
                 userO.uid = userA.uid;
-
-                if (FBDB.isOldUser()) {
-                   console.log("this is a old user"); //createHomePage();
-                } else {
-                    showNewUserPage();
-                }
-
+                FBDB.isOldUser();              
             }
 
         })
@@ -47,11 +41,19 @@ export class FBDB {
 
 
     static isOldUser() {
+        showLoading();
         firebase.firestore().collection('users')
             .doc(userO.uid)
             .get()
             .then((UO) => {
-                return UO.exists;
+                hideLoading();
+                console.log(UO);
+                if(UO.exists){
+                    homeOptO.grade=UO.data().grade;
+                    homeOptO.school=UO.data().school;
+                    homeOptO.subject="maths";
+                    createHomePage()
+                }else{showNewUserPage()}
             });
     }
     static getDBHome() {

@@ -61,6 +61,7 @@ export async function createHomePage() {
   ELHomeContent.style.display = "";
   var querySnapshot = await FBDB.getDBHome();
   hideLoading();
+  updateHomeHeader();
   ELHomeContent.innerHTML = "";
  
   querySnapshot.forEach(doc => {
