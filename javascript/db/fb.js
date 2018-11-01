@@ -55,6 +55,7 @@ export class FBDB {
                     createHomePage()
                 }else{showNewUserPage()}
             });
+            
     }
     static getDBHome() {
         return firebase.firestore().collection("topics-Maths")
@@ -82,7 +83,12 @@ export class FBDB {
         firebase.firestore().collection('users')
             .doc(userO.uid)
             .set(userO)
-            .then(() => createHomePage())
+            .then(() => createHomePage());
+        firebase.firestore().collection('schools')
+            .doc('listofschools')
+            .set({
+                [`${userO.school}`]: true
+            }, { merge: true });
     }
     /*     static SignIn(email, password) {
             firebase
